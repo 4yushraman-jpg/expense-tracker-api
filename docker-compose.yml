@@ -20,9 +20,8 @@ services:
     restart: always
     depends_on:
       - db
-    environment:
-      DATABASE_URL: postgres://user:password@db:5432/expense_db?sslmode=disable
-      JWT_SECRET: qazxswedcvfrtgbnhyujmkiolp
+    env_file:
+      - .env
     ports:
       - "8080:8080"
 
